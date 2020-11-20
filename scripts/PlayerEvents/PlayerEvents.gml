@@ -8,7 +8,6 @@ function CheckHit()
 
 function UnitDefend(){
 	var _unit = global.selected;
-	//show_debug_message(string(_unit)+" defends");
 	_unit.defending = true;
 	_unit.turnFinished = true;
 }

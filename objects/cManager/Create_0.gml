@@ -23,7 +23,7 @@ allowInputs = false;
 baseUI = layer_get_id("BaseMenu");
 targetUI = layer_get_id("TargetingMenu");
 
-//turn off all layers except for base menu
+//turn off all layers
 layer_set_visible(targetUI, false);
 instance_deactivate_layer(targetUI);
 layer_set_visible(baseUI, false);

@@ -11,11 +11,9 @@ switch (state){
 			if (attackWillHit){
 				layer_sequence_headpos(playerSequence, idleStart);
 				state = IDLE;
-				//show_debug_message("HIT!");
 			} else { 
 				layer_sequence_headpos(playerSequence, missStart);
 				state = MISS;
-				//show_debug_message("MISS!");
 			}
 		}
 	break;
@@ -40,8 +38,6 @@ switch (state){
 	break;
 	case DEATH:
 		if(layer_sequence_get_headpos(playerSequence) > deathEnd){
-			//layer_sequence_headpos(playerSequence, deathEnd);
-			//layer_sequence_destroy(playerSequence);
 			instance_destroy();
 		}
 	break;

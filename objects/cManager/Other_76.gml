@@ -7,7 +7,10 @@ if (event_data[? "event_type"] == "sequence event"){
 		case "PlayerHurt":
 		break;
 		case "PlayerMiss":
+			processFinished = true;
+		break;
 		case "PlayerDefend":
+			global.selected.turnFinished = true;
 			processFinished = true;
 		break;
 		
@@ -19,7 +22,6 @@ if (event_data[? "event_type"] == "sequence event"){
 					ds_list_delete(global.units, _pos);
 				}
 			}
-			//show_message("Unit/s removed. Complete process");
 			processFinished = true;
 		break;
 	}
