@@ -33,5 +33,21 @@ hurt = function(amount){
 	currentHealth -= amount;
 }
 
+checktoHit = function(){
+	var hitChance = random(1) > 0 ? true : false;
+	attackWillHit = hitChance;
+}
+
+defend = function(){
+	defending = true;
+	turnFinished = true;
+}
+
+transitionState = function(_state, _animation){
+	image_index = 0;
+	image_index = _animation;
+	state = _state;
+}
+
 hpBarHeight = sprite_get_height(vHP);
 hpBarWidth = sprite_get_width(vHP);
