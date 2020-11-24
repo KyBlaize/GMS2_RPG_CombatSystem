@@ -1,16 +1,18 @@
 // Auto-generated stubs for each available event.
 
-function CheckHit()
-{
-	var hitChance = random(1) > 0 ? true : false;
-	global.selected.attackWillHit = hitChance;
+function addSkill(_skillid, _name, _type, _targets, _healthChange, _cost, _script){
+	global.skillIndex[# _skillid, skillStat.name] = _name;
+	global.skillIndex[# _skillid, skillStat.type] = _type;
+	global.skillIndex[# _skillid, skillStat.targets] = _targets;
+	global.skillIndex[# _skillid, skillStat.healthChange] = _healthChange;
+	global.skillIndex[# _skillid, skillStat.cost] = _cost;
+	global.skillIndex[# _skillid, skillStat.action] = _script;
 }
 
-function UnitDefend(){
-	var _unit = global.selected;
-	_unit.defending = true;
-	_unit.turnFinished = true;
+function singleTargetAttack(_target){
+	show_debug_message("Use skill on "+string(_target));
 }
 
-function UnitDied(){
+function multiTargetAttack(_number, _mainTarget){
+	show_debug_message("Use skill on "+string(_mainTarget) + " "+string(_number)+" other/s");
 }

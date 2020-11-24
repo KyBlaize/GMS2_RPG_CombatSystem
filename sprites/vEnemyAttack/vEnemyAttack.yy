@@ -53,10 +53,10 @@
     "volume": 1.0,
     "length": 6.0,
     "events": {"Keyframes":[
-        {"id":"5986ed62-2acd-49b5-9b94-bb61262eba8d","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
-                "CheckAttack",
+        {"id":"d2e08148-b335-45ab-982c-33ac0dc0e406","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
+                "Check",
               ],"resourceVersion":"1.0","resourceType":"MessageEventKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<MessageEventKeyframe>",},
-        {"id":"5877c4b6-e96a-4699-95e2-eb4c5760759f","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
+        {"id":"d57a30fd-8aa2-490d-b581-e4df43718d05","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Events":[
                 "SendAttack",
               ],"resourceVersion":"1.0","resourceType":"MessageEventKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<MessageEventKeyframe>",},
       ],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},

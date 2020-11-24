@@ -17,17 +17,19 @@ state = IDLE;
 //base stats
 unitTeam = 0; //0 = player, 1 = enemy
 maxHealth = 10;
+maxSkillPoints = 4;
 baseSpeed = irandom_range(1,10);
 
 //variable stats
 currentHealth = maxHealth;
 currentSpeed = baseSpeed;
-
+currentSkillPoints = maxSkillPoints;
 
 attackWillHit = -1;
 defending = false;
 turnFinished = false;
 drawTarget = false;
+selected = false;
 
 hurt = function(amount){
 	currentHealth -= amount;
@@ -43,11 +45,8 @@ defend = function(){
 	turnFinished = true;
 }
 
-transitionState = function(_state, _animation){
-	image_index = 0;
-	image_index = _animation;
-	state = _state;
-}
-
 hpBarHeight = sprite_get_height(vHP);
 hpBarWidth = sprite_get_width(vHP);
+
+skill[0] = -1;
+skill[1] = -1;

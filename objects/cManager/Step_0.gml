@@ -9,7 +9,6 @@ switch(phase){
 			}
 			ds_list_add(global.units, _unit);
 		}
-		
 		phase = combat.roundStart;
 		
 	break;
@@ -49,7 +48,9 @@ switch(phase){
 		if (global.selected.turnFinished){
 			unitsFinished++;
 			phase = combat.process;
+			skillTargeting = false;
 			event_user(0);
+			//manually reset visibility
 			layer_set_visible(targetUI, false);
 			instance_deactivate_layer(targetUI);
 			layer_set_visible(baseUI, false);

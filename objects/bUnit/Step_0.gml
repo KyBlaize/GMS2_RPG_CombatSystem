@@ -11,7 +11,7 @@ switch (state){
 			if (attackWillHit){
 				layer_sequence_headpos(playerSequence, idleStart);
 				state = IDLE;
-			} else { 
+			} else {
 				layer_sequence_headpos(playerSequence, missStart);
 				state = MISS;
 			}
@@ -59,3 +59,7 @@ if (global.targeting && global.selected != noone){
 		drawTarget = true;
 	} else drawTarget = false;
 }
+
+if (global.selected == id){
+	selected = true;
+} else selected = false;

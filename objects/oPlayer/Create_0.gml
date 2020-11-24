@@ -18,3 +18,7 @@ castEnd = 149;
 defendStart = 150;
 defendEnd = 169;
 
+skill[0] = global.skillIndex[# 0,0];
+skill[1] = global.skillIndex[# 1,0];
+
+show_debug_message(string(id)+"'s skills are "+string(skill[0])+" and "+string(skill[1]));

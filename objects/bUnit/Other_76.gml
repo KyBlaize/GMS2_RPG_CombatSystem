@@ -6,7 +6,9 @@ if (event_data[? "event_type"] == "sequence event"){
 				checktoHit();
 			}else show_debug_message(string(id)+" is not attacking");
 		break;
-		
+		case "Check":
+			show_message("Check Event Fired!");
+		break;
 		case "PlayerDefend":
 			if (id == global.selected){
 				show_debug_message(string(id)+" is definding");
