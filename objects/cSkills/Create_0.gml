@@ -1,18 +1,17 @@
 /// @description 
 enum skillStat{
 	name,
-	type, //element
+	element, //set with skillElement
+	type, //set with skillType
 	targets,
 	healthChange,
 	cost,
-	action, //function
-	total
+	action //function to run
 };
 
 enum skillType{
 	physical,
 	magic,
-	total
 };
 
 enum skillElement{
@@ -20,9 +19,20 @@ enum skillElement{
 	fire,
 }
 
-global.skillIndex = ds_grid_create(skillType.total,skillStat.total);
-ds_grid_clear(global.skillIndex, 0);
+enum skill{
+	slash,
+	multiSlash,
+}
 
-addSkill(0, "Slash", skillElement.none, 1, 2, 1, singleTargetAttack);
-addSkill(1, "Multi-Slash", skillElement.none, 2, 2, 2, multiTargetAttack);
-addSkill(2, "Fire", skillElement.fire, 1, 3, 3, singleTargetAttack);
+Skill = function(_name, _element, _type, _targets, _healthChange, _cost, _action) constructor {
+	name = _name;
+	element = _element;
+	type = _type;
+	targets = _targets;
+	healthChange = _healthChange;
+	cost = _cost;
+	action = _action;
+}
+
+global.skill[skill.slash] = new Skill("Slash", skillElement.none, skillType.physical, 1, 2, 2, singleTargetAttack);
+global.skill[skill.multiSlash] = new Skill("M-Slash", skillElement.none, skillType.physical, 1, 2, 2, multiTargetAttack);

@@ -21,3 +21,8 @@ castStart = 120;
 castEnd = 149;
 defendStart = 150;
 defendEnd = 169;
+magicStart = 170;
+magicEnd = 199;
+
+learnedSkill[0] = global.skill[skill.slash];
+learnedSkill[1] = global.skill[skill.multiSlash];

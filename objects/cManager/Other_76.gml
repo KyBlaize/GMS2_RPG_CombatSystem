@@ -1,11 +1,12 @@
 if (event_data[? "event_type"] == "sequence event"){
 	switch(event_data[? "message"]){
 		case "SendAttack":
+		case "SendMagic":
 			global.selected.turnFinished = true;
 		break;
 		
 		case "PlayerHurt":
-		break;
+		//break;
 		case "PlayerMiss":
 			processFinished = true;
 		break;

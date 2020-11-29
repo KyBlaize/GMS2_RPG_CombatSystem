@@ -17,8 +17,10 @@ castStart = 120;
 castEnd = 149;
 defendStart = 150;
 defendEnd = 169;
+magicStart = 170;
+magicEnd = 199;
 
-skill[0] = global.skillIndex[# 0,0];
-skill[1] = global.skillIndex[# 1,0];
+learnedSkill[0] = global.skill[skill.slash];
+learnedSkill[1] = global.skill[skill.multiSlash];
 
-show_debug_message(string(id)+"'s skills are "+string(skill[0])+" and "+string(skill[1]));
+//show_debug_message(string(id)+"'s skills are "+string(learnedSkill[0])+" and "+string(learnedSkill[1]));

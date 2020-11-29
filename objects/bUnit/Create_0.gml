@@ -11,6 +11,7 @@
 #macro DEATH 4
 #macro CAST 5
 #macro DEFEND 6
+#macro MAGIC 7
 
 state = IDLE;
 
@@ -30,6 +31,7 @@ defending = false;
 turnFinished = false;
 drawTarget = false;
 selected = false;
+selectedSkill = -1;
 
 hurt = function(amount){
 	currentHealth -= amount;
@@ -48,5 +50,5 @@ defend = function(){
 hpBarHeight = sprite_get_height(vHP);
 hpBarWidth = sprite_get_width(vHP);
 
-skill[0] = -1;
-skill[1] = -1;
+learnedSkill[0] = -1;
+learnedSkill[1] = -1;

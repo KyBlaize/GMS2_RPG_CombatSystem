@@ -22,7 +22,7 @@ switch (state){
 			hurt(2); //put some calculations in
 			if (currentHealth > 0){
 				layer_sequence_headpos(playerSequence, idleStart);
-				cManager.processFinished = true;//hack
+				//cManager.processFinished = true;//hack
 				state = IDLE;
 			} else {
 				layer_sequence_headpos(playerSequence, deathStart);
@@ -52,9 +52,21 @@ switch (state){
 			layer_sequence_headpos(playerSequence, defendStart);
 		}
 	break;
+	case MAGIC:
+		if(layer_sequence_get_headpos(playerSequence) > magicEnd){
+			if (attackWillHit){
+				layer_sequence_headpos(playerSequence, idleStart);
+				state = IDLE;
+			} else {
+				layer_sequence_headpos(playerSequence, missStart);
+				state = MISS;
+			}
+			global.selected.selectedSkill = -1;
+		}
+	break;
 }
 
-if (global.targeting && global.selected != noone){
+if ((global.targeting || global.skillTargeting) && global.selected != noone){
 	if (position_meeting(mouse_x, mouse_y, id) && unitTeam != global.selected.unitTeam){
 		drawTarget = true;
 	} else drawTarget = false;
