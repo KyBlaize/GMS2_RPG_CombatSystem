@@ -16,7 +16,6 @@ enum skillType{
 
 enum skillElement{
 	none,
-	fire,
 }
 
 enum skill{
@@ -24,15 +23,14 @@ enum skill{
 	multiSlash,
 }
 
-Skill = function(_name, _element, _type, _targets, _healthChange, _cost, _action) constructor {
+Skill = function(_name, _element, _type, _healthChange, _cost, _action) constructor {
 	name = _name;
 	element = _element;
 	type = _type;
-	targets = _targets;
 	healthChange = _healthChange;
 	cost = _cost;
 	action = _action;
 }
 
-global.skill[skill.slash] = new Skill("Slash", skillElement.none, skillType.physical, 1, 2, 2, singleTargetAttack);
-global.skill[skill.multiSlash] = new Skill("M-Slash", skillElement.none, skillType.physical, 1, 2, 2, multiTargetAttack);
+global.skill[skill.slash] = new Skill("Slash", skillElement.none, skillType.physical, 2, 1, singleTargetAttack);
+global.skill[skill.multiSlash] = new Skill("M-Slash", skillElement.none, skillType.physical, 2, 2, multiTargetAttack);

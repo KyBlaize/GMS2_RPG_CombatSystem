@@ -5,7 +5,10 @@ enum combat{
 	roundStart,
 	ready,
 	process,
-	roundEnd
+	checkEnd,
+	roundEnd,
+	win,
+	lose,
 };
 phase = combat.setup;
 
@@ -20,7 +23,10 @@ global.skillTargeting = false;
 unitsFinished = 0;
 processFinished = false;
 allowInputs = false;
-
+magicSent = false;
+allies = 0;
+enemies = 0;
+aiDone = false;
 
 instance_create_depth(0,0,0, cSkills);
 

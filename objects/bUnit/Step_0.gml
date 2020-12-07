@@ -19,13 +19,14 @@ switch (state){
 	break;
 	case HURT:
 		if(layer_sequence_get_headpos(playerSequence) > hurtEnd){
-			hurt(2); //put some calculations in
+			hurt(2);
 			if (currentHealth > 0){
 				layer_sequence_headpos(playerSequence, idleStart);
-				//cManager.processFinished = true;//hack
+				cManager.processFinished = true;
 				state = IDLE;
 			} else {
 				layer_sequence_headpos(playerSequence, deathStart);
+				ds_list_delete(global.units,ds_list_find_index(global.units, id));
 				state = DEATH;
 			}
 		}
@@ -54,6 +55,7 @@ switch (state){
 	break;
 	case MAGIC:
 		if(layer_sequence_get_headpos(playerSequence) > magicEnd){
+			spendSkillPoints(selectedSkill.cost);
 			if (attackWillHit){
 				layer_sequence_headpos(playerSequence, idleStart);
 				state = IDLE;
@@ -61,7 +63,7 @@ switch (state){
 				layer_sequence_headpos(playerSequence, missStart);
 				state = MISS;
 			}
-			global.selected.selectedSkill = -1;
+			selectedSkill = -1;
 		}
 	break;
 }

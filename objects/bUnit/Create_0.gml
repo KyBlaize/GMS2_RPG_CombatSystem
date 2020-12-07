@@ -26,26 +26,20 @@ currentHealth = maxHealth;
 currentSpeed = baseSpeed;
 currentSkillPoints = maxSkillPoints;
 
+hurt = function(amount){
+	currentHealth -= amount;
+}
+
+spendSkillPoints = function(amount){
+	currentSkillPoints -= amount;
+}
+
 attackWillHit = -1;
 defending = false;
 turnFinished = false;
 drawTarget = false;
 selected = false;
-selectedSkill = -1;
-
-hurt = function(amount){
-	currentHealth -= amount;
-}
-
-checktoHit = function(){
-	var hitChance = random(1) > 0 ? true : false;
-	attackWillHit = hitChance;
-}
-
-defend = function(){
-	defending = true;
-	turnFinished = true;
-}
+selectedSkill = -1
 
 hpBarHeight = sprite_get_height(vHP);
 hpBarWidth = sprite_get_width(vHP);

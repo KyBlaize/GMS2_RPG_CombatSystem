@@ -7,12 +7,12 @@ if (global.targeting){
 		if (_unit.unitTeam != global.selected.unitTeam){
 			show_debug_message("ATTACK TARGET "+string(_unit)+" at "+string(mouse_x)+", "+string(mouse_y));
 			
+			ds_list_clear(global.selectedtargets);
 			with (global.selected){
-				ds_list_clear(global.selectedtargets);
 				state = ATTACK;
 				layer_sequence_headpos(playerSequence, attackStart);
-				ds_list_add(global.selectedtargets, _unit);
 			}
+			ds_list_add(global.selectedtargets, _unit);
 		}
 	} 
 }
@@ -23,12 +23,14 @@ if (global.skillTargeting){
 		if (_unit.unitTeam != global.selected.unitTeam){
 			show_debug_message("SKILL TARGET: "+string(_unit)+" at "+string(mouse_x)+", "+string(mouse_y));
 			
+			var _skill = global.selected.selectedSkill;
+			ds_list_clear(global.selectedtargets);
+			
 			with (global.selected){
-				ds_list_clear(global.selectedtargets);
 				state = MAGIC;
 				layer_sequence_headpos(playerSequence, magicStart);
-				ds_list_add(global.selectedtargets, _unit);
 			}
+			script_execute(_skill.action, _unit);
 		}
 	} 
 }
